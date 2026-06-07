@@ -23,7 +23,7 @@ public class ShaftGeneratorBlockEntity extends ElectricKineticBlockEntity implem
 
     private static final float DEFAULT_TORQUE_FOR_STRESS = 15.0f;
     private static final float POWER_TO_SPEED = 94.24778f;
-    private static final float MECHANICAL_LOAD_MULTIPLIER = 3.0f;
+    private static final float MECHANICAL_LOAD_MULTIPLIER = 1.5f;
     private static final float MAX_DYNAMIC_STRESS_IMPACT = 256.0f;
     private static final float VOLTS_PER_RPM = NOMINAL_VOLTAGE / NOMINAL_SPEED;
     private static final float MAX_SPEED = MAX_VOLTAGE / VOLTS_PER_RPM;
