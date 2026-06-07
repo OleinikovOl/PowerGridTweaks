@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "powergrid:block/electric_motor/block_vertical",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "powergridtweaks:block/shaft_generator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "powergridtweaks:block/shaft_generator"
+    },
+    "facing=south": {
+      "model": "powergridtweaks:block/shaft_generator",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "powergrid:block/electric_motor/block_vertical",
+      "x": -90
+    },
+    "facing=west": {
+      "model": "powergridtweaks:block/shaft_generator",
+      "y": -90
+    }
+  }
+}

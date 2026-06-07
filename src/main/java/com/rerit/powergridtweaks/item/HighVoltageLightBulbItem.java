@@ -14,7 +14,7 @@ public class HighVoltageLightBulbItem extends LightBulb {
     public HighVoltageLightBulbItem(Item.Properties properties) {
         super(properties);
 
-        this.voltage = 128.0f;
+        this.voltage = 120.0f;
         this.power = 60.0f;
 
         this.T_max = 1450.0f;

@@ -11,17 +11,17 @@
     "G": {
       "item": "minecraft:glowstone_dust"
     },
-    "R": {
-      "item": "minecraft:redstone"
+    "W": {
+      "tag": "c:wires/copper"
     },
     "C": {
-      "item": "minecraft:copper_ingot"
+      "tag": "c:plates/copper"
     }
   },
   "pattern": [
-    " P ",
-    "RBR",
-    "GC "
+    "PGP",
+    "WBW",
+    " C "
   ],
   "result": {
     "id": "powergridtweaks:high_voltage_light_bulb",

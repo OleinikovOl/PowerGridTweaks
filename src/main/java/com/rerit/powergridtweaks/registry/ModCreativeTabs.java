@@ -7,6 +7,7 @@ public class ModCreativeTabs {
     public static void addCreativeTabItems(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.HIGH_VOLTAGE_LIGHT_BULB.get());
+            event.accept(ModItems.SHAFT_GENERATOR.get());
         }
     }
 }

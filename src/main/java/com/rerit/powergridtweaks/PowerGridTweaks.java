@@ -1,6 +1,8 @@
 package com.rerit.powergridtweaks;
 
 import com.rerit.powergridtweaks.config.PowerGridTweaksConfig;
+import com.rerit.powergridtweaks.registry.ModBlockEntities;
+import com.rerit.powergridtweaks.registry.ModBlocks;
 import com.rerit.powergridtweaks.registry.ModCreativeTabs;
 import com.rerit.powergridtweaks.registry.ModItems;
 import net.neoforged.api.distmarker.Dist;
@@ -15,7 +17,9 @@ public class PowerGridTweaks {
     public static final String MOD_ID = "powergridtweaks";
 
     public PowerGridTweaks(IEventBus modEventBus, ModContainer modContainer) {
+        ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             PowerGridTweaksClient.register(modEventBus);
