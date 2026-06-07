@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '1.0.23'
+}
+
+group = 'com.rerit'
+version = '0.0.8'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+neoForge {
+    version = neo_version
+
+    mods {
+        powergridtweaks {
+            sourceSet sourceSets.main
+        }
+    }
+
+    runs {
+        client { client() }
+        server { server() }
+    }
+}
+
+repositories {
+    maven {
+        url = "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url = "https://maven.createmod.net"
+        content {
+            includeGroupAndSubgroups("net.createmod")
+            includeGroupAndSubgroups("dev.engine-room")
+            includeGroupAndSubgroups("com.simibubi")
+        }
+    }
+}
+
+dependencies {
+    implementation "curse.maven:create-328085:7963363"
+    implementation "curse.maven:architectury-api-419699:5786327"
+    implementation "curse.maven:power-grid-1321420:7999916"
+    implementation("net.createmod.ponder:ponder-neoforge:${ponder_forge_version}+mc${minecraft_version}")
+    implementation("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_forge_version}")
+}

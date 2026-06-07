@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "c:glass_panes"
+    },
+    "B": {
+      "item": "powergrid:light_bulb"
+    },
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " P ",
+    "RBR",
+    "GC "
+  ],
+  "result": {
+    "id": "powergridtweaks:high_voltage_light_bulb",
+    "count": 1
+  },
+  "show_notification": true
+}

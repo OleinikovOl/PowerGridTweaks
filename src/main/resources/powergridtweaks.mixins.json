@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.rerit.powergridtweaks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockBehaviourMixin",
+    "LightFixtureBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
