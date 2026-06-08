@@ -1,5 +1,6 @@
 package com.rerit.powergridtweaks.mixin;
 
+import com.rerit.powergridtweaks.config.PowerGridTweaksConfig;
 import com.rerit.powergridtweaks.feature.lights.ExtraLightHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -26,11 +27,13 @@ public abstract class BlockBehaviourMixin {
     ) {
         if (!(level instanceof ServerLevel serverLevel)) return;
         if (ExtraLightHelper.isUpdatingExtraLights()) return;
+        if (state.equals(oldState)) return;
         if (state.is(Blocks.LIGHT)) return;
 
         if ((Object) this instanceof LightFixtureBlock) {
             ExtraLightHelper.update(serverLevel, pos, state);
-        } else {
+        } else if (PowerGridTweaksConfig.strongerLightsEnabled()
+                && ExtraLightHelper.affectsExtraLight(oldState, state)) {
             ExtraLightHelper.refreshNearbyFixtures(serverLevel, pos);
         }
     }
@@ -46,11 +49,13 @@ public abstract class BlockBehaviourMixin {
     ) {
         if (!(level instanceof ServerLevel serverLevel)) return;
         if (ExtraLightHelper.isUpdatingExtraLights()) return;
+        if (state.equals(newState)) return;
         if (state.is(Blocks.LIGHT)) return;
 
         if ((Object) this instanceof LightFixtureBlock) {
             ExtraLightHelper.remove(serverLevel, pos);
-        } else {
+        } else if (PowerGridTweaksConfig.strongerLightsEnabled()
+                && ExtraLightHelper.affectsExtraLight(state, newState)) {
             ExtraLightHelper.refreshNearbyFixtures(serverLevel, pos);
         }
     }
