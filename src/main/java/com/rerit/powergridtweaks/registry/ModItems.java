@@ -15,6 +15,21 @@ public class ModItems {
             ITEMS.register("high_voltage_light_bulb",
                     () -> new HighVoltageLightBulbItem(new Item.Properties()));
 
+    public static final DeferredItem<Item> POWER_DIODE =
+            ITEMS.registerSimpleItem("power_diode", new Item.Properties());
+
+    public static final DeferredItem<Item> POWER_RESISTOR =
+            ITEMS.registerSimpleItem("power_resistor", new Item.Properties());
+
+    public static final DeferredItem<Item> POWER_SWITCH =
+            ITEMS.registerSimpleItem("power_switch", new Item.Properties());
+
+    public static final DeferredItem<Item> POWER_REDSTONE_RELAY =
+            ITEMS.registerSimpleItem("power_redstone_relay", new Item.Properties());
+
+    public static final DeferredItem<Item> POWER_RELAY =
+            ITEMS.registerSimpleItem("power_relay", new Item.Properties());
+
     public static final DeferredItem<BlockItem> SHAFT_GENERATOR =
             ITEMS.registerSimpleBlockItem(ModBlocks.SHAFT_GENERATOR, new Item.Properties());
 

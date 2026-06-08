@@ -1,5 +1,10 @@
 {
   "item.powergridtweaks.high_voltage_light_bulb": "Высоковольтная лампа",
+  "item.powergridtweaks.power_diode": "Силовой диод",
+  "item.powergridtweaks.power_resistor": "Силовой резистор",
+  "item.powergridtweaks.power_switch": "Силовой выключатель",
+  "item.powergridtweaks.power_redstone_relay": "Силовое редстоун-реле",
+  "item.powergridtweaks.power_relay": "Силовое реле",
   "block.powergridtweaks.shaft_generator": "Валовый генератор",
   "block.powergridtweaks.lithium_battery": "Литиевый аккумулятор",
   "block.powergridtweaks.nether_lithium_ore": "Незерская литиевая руда",
@@ -12,6 +17,15 @@
   "item.powergridtweaks.lithium_cell": "Литиевый элемент",
   "item.powergridtweaks.incomplete_lithium_cell": "Незавершенный литиевый элемент",
   "item.powergridtweaks.incomplete_graphite_sheet": "Незавершенный графитовый лист",
+  "powergridtweaks.component.property.power_redstone_relay_powered": "Питание",
+  "powergridtweaks.component.property.power_relay_current": "Ток срабатывания",
+  "powergridtweaks.component.property.power_relay_current.summary": "Ток, нужный для срабатывания силового реле",
+  "powergridtweaks.component.property.power_relay_lower_threshold": "Нижний порог напряжения",
+  "powergridtweaks.component.property.power_relay_lower_threshold.summary": "Напряжение, ниже которого силовое реле отпускает",
+  "powergridtweaks.component.property.power_relay_threshold": "Порог напряжения",
+  "powergridtweaks.component.property.power_relay_threshold.summary": "Напряжение, выше которого силовое реле срабатывает",
+  "powergridtweaks.component.property.power_resistor_value": "Сопротивление",
+  "powergridtweaks.component.property.power_switch_state": "Состояние",
   "powergridtweaks.component.property.relay_lower_threshold": "Нижний порог напряжения",
   "powergridtweaks.component.property.relay_lower_threshold.summary": "Напряжение, ниже которого реле отпускает"
 }

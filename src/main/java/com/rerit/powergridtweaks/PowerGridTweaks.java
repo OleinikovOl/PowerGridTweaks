@@ -3,6 +3,7 @@ package com.rerit.powergridtweaks;
 import com.rerit.powergridtweaks.config.PowerGridTweaksConfig;
 import com.rerit.powergridtweaks.registry.ModBlockEntities;
 import com.rerit.powergridtweaks.registry.ModBlocks;
+import com.rerit.powergridtweaks.registry.ModCircuitComponents;
 import com.rerit.powergridtweaks.registry.ModCreativeTabs;
 import com.rerit.powergridtweaks.registry.ModItems;
 import com.rerit.powergridtweaks.registry.ModThermalValues;
@@ -27,6 +28,7 @@ public class PowerGridTweaks {
             PowerGridTweaksClient.register(modEventBus);
         }
 
+        modEventBus.addListener(ModCircuitComponents::registerComponents);
         modEventBus.addListener(ModCreativeTabs::addCreativeTabItems);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, PowerGridTweaksConfig.SPEC);

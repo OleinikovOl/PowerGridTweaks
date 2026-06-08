@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "CSC",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "powergrid:lv_switch"
+    }
+  },
+  "result": {
+    "id": "powergridtweaks:power_switch",
+    "count": 1
+  }
+}

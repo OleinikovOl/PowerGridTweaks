@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "RCR",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "R": {
+      "item": "powergrid:resistor"
+    }
+  },
+  "result": {
+    "id": "powergridtweaks:power_resistor",
+    "count": 1
+  }
+}

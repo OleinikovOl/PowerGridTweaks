@@ -44,7 +44,7 @@ side="BOTH"
 modId="powergrid"
 type="required"
 versionRange="[0,)"
-ordering="NONE"
+ordering="AFTER"
 side="BOTH"
 
 [[dependencies.powergridtweaks]]

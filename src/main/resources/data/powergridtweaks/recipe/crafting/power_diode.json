@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "CDC",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "D": {
+      "item": "powergrid:diode"
+    }
+  },
+  "result": {
+    "id": "powergridtweaks:power_diode",
+    "count": 1
+  }
+}

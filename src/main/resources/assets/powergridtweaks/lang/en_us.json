@@ -1,5 +1,10 @@
 {
   "item.powergridtweaks.high_voltage_light_bulb": "High Voltage Light Bulb",
+  "item.powergridtweaks.power_diode": "Power Diode",
+  "item.powergridtweaks.power_resistor": "Power Resistor",
+  "item.powergridtweaks.power_switch": "Power Switch",
+  "item.powergridtweaks.power_redstone_relay": "Power Redstone Relay",
+  "item.powergridtweaks.power_relay": "Power Relay",
   "block.powergridtweaks.shaft_generator": "Shaft Generator",
   "block.powergridtweaks.lithium_battery": "Lithium Battery",
   "block.powergridtweaks.nether_lithium_ore": "Nether Lithium Ore",
@@ -12,6 +17,15 @@
   "item.powergridtweaks.lithium_cell": "Lithium Cell",
   "item.powergridtweaks.incomplete_lithium_cell": "Incomplete Lithium Cell",
   "item.powergridtweaks.incomplete_graphite_sheet": "Incomplete Graphite Sheet",
+  "powergridtweaks.component.property.power_redstone_relay_powered": "Powered",
+  "powergridtweaks.component.property.power_relay_current": "Threshold Current",
+  "powergridtweaks.component.property.power_relay_current.summary": "Current needed to trigger the power relay",
+  "powergridtweaks.component.property.power_relay_lower_threshold": "Lower Threshold Voltage",
+  "powergridtweaks.component.property.power_relay_lower_threshold.summary": "Voltage below which the power relay releases",
+  "powergridtweaks.component.property.power_relay_threshold": "Threshold Voltage",
+  "powergridtweaks.component.property.power_relay_threshold.summary": "Voltage above which the power relay triggers",
+  "powergridtweaks.component.property.power_resistor_value": "Resistance",
+  "powergridtweaks.component.property.power_switch_state": "State",
   "powergridtweaks.component.property.relay_lower_threshold": "Lower Threshold Voltage",
   "powergridtweaks.component.property.relay_lower_threshold.summary": "Voltage below which the relay releases"
 }
