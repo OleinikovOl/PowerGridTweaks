@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "c:plates/lithium"
   },
-  "loops": 1,
+  "loops": 2,
   "results": [
     {
       "chance": 100.0,
@@ -15,11 +15,7 @@
     },
     {
       "chance": 3.0,
-      "id": "create:copper_sheet"
-    },
-    {
-      "chance": 2.0,
-      "id": "minecraft:redstone"
+      "id": "powergridtweaks:graphite_sheet"
     }
   ],
   "sequence": [
@@ -46,7 +42,23 @@
           "item": "powergridtweaks:incomplete_lithium_cell"
         },
         {
-          "item": "minecraft:redstone"
+          "tag": "c:plates/graphite"
+        }
+      ],
+      "results": [
+        {
+          "id": "powergridtweaks:incomplete_lithium_cell"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "powergridtweaks:incomplete_lithium_cell"
+        },
+        {
+          "tag": "c:wires/copper"
         }
       ],
       "results": [

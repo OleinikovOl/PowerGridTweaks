@@ -16,8 +16,8 @@ public class ShaftGeneratorBlockEntity extends ElectricKineticBlockEntity implem
     public static final float NOMINAL_SPEED = 120.0f;
     public static final float NOMINAL_VOLTAGE = 24.0f;
     public static final float MAX_VOLTAGE = 36.0f;
-    public static final float INTERNAL_RESISTANCE = 0.8f;
-    public static final float RATED_OUTPUT_POWER = 180.0f;
+    public static final float RATED_OUTPUT_POWER = 500.0f;
+    public static final float INTERNAL_RESISTANCE = NOMINAL_VOLTAGE * NOMINAL_VOLTAGE / (4.0f * RATED_OUTPUT_POWER);
     public static final float MAX_OUTPUT_POWER = MAX_VOLTAGE * MAX_VOLTAGE / (4.0f * INTERNAL_RESISTANCE);
     public static final float BASE_STRESS_IMPACT = 0.5f;
 

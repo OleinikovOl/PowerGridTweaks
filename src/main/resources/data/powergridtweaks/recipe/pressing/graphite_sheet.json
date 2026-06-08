@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "powergridtweaks:incomplete_graphite_sheet"
+    }
+  ],
+  "results": [
+    {
+      "id": "powergridtweaks:graphite_sheet"
+    }
+  ]
+}

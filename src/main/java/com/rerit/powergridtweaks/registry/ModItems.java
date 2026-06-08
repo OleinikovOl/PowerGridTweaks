@@ -39,9 +39,15 @@ public class ModItems {
     public static final DeferredItem<Item> LITHIUM_SHEET =
             ITEMS.registerSimpleItem("lithium_sheet", new Item.Properties());
 
+    public static final DeferredItem<Item> GRAPHITE_SHEET =
+            ITEMS.registerSimpleItem("graphite_sheet", new Item.Properties());
+
     public static final DeferredItem<Item> LITHIUM_CELL =
             ITEMS.registerSimpleItem("lithium_cell", new Item.Properties());
 
     public static final DeferredItem<Item> INCOMPLETE_LITHIUM_CELL =
             ITEMS.registerSimpleItem("incomplete_lithium_cell", new Item.Properties());
+
+    public static final DeferredItem<Item> INCOMPLETE_GRAPHITE_SHEET =
+            ITEMS.registerSimpleItem("incomplete_graphite_sheet", new Item.Properties());
 }

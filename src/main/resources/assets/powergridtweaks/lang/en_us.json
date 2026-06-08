@@ -8,6 +8,10 @@
   "item.powergridtweaks.lithium_ingot": "Lithium Ingot",
   "item.powergridtweaks.lithium_nugget": "Lithium Nugget",
   "item.powergridtweaks.lithium_sheet": "Lithium Sheet",
+  "item.powergridtweaks.graphite_sheet": "Graphite Sheet",
   "item.powergridtweaks.lithium_cell": "Lithium Cell",
-  "item.powergridtweaks.incomplete_lithium_cell": "Incomplete Lithium Cell"
+  "item.powergridtweaks.incomplete_lithium_cell": "Incomplete Lithium Cell",
+  "item.powergridtweaks.incomplete_graphite_sheet": "Incomplete Graphite Sheet",
+  "powergridtweaks.component.property.relay_lower_threshold": "Lower Threshold Voltage",
+  "powergridtweaks.component.property.relay_lower_threshold.summary": "Voltage below which the relay releases"
 }

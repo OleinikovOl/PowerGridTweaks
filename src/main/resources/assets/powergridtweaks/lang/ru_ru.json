@@ -8,6 +8,10 @@
   "item.powergridtweaks.lithium_ingot": "Литиевый слиток",
   "item.powergridtweaks.lithium_nugget": "Кусочек лития",
   "item.powergridtweaks.lithium_sheet": "Литиевая пластина",
+  "item.powergridtweaks.graphite_sheet": "Графитовый лист",
   "item.powergridtweaks.lithium_cell": "Литиевый элемент",
-  "item.powergridtweaks.incomplete_lithium_cell": "Незавершенный литиевый элемент"
+  "item.powergridtweaks.incomplete_lithium_cell": "Незавершенный литиевый элемент",
+  "item.powergridtweaks.incomplete_graphite_sheet": "Незавершенный графитовый лист",
+  "powergridtweaks.component.property.relay_lower_threshold": "Нижний порог напряжения",
+  "powergridtweaks.component.property.relay_lower_threshold.summary": "Напряжение, ниже которого реле отпускает"
 }

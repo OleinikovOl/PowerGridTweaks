@@ -15,6 +15,7 @@ public class ModCreativeTabs {
             event.accept(ModItems.LITHIUM_INGOT.get());
             event.accept(ModItems.LITHIUM_NUGGET.get());
             event.accept(ModItems.LITHIUM_SHEET.get());
+            event.accept(ModItems.GRAPHITE_SHEET.get());
             event.accept(ModItems.LITHIUM_CELL.get());
         }
     }
