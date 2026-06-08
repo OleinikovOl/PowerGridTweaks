@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "minecraft:coals"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "powergrid:acid"
+    }
+  ],
+  "results": [
+    {
+      "id": "powergridtweaks:carbon_mass"
+    }
+  ]
+}

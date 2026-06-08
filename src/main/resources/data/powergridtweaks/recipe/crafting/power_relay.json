@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "RCR",
+    " E "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "E": {
+      "item": "powergrid:electrical_gizmo"
+    },
+    "R": {
+      "item": "powergrid:relay"
+    }
+  },
+  "result": {
+    "id": "powergridtweaks:power_relay",
+    "count": 1
+  }
+}

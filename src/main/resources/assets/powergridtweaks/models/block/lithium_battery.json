@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "powergridtweaks:block/lithium_battery_top",
+    "side": "powergridtweaks:block/lithium_battery_side"
+  }
+}

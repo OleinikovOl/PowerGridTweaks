@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.rerit'
-version = '0.0.8'
+version = '0.0.9'
 
 java {
     toolchain {
@@ -50,4 +50,5 @@ dependencies {
     implementation "curse.maven:power-grid-1321420:7999916"
     implementation("net.createmod.ponder:ponder-neoforge:${ponder_forge_version}+mc${minecraft_version}")
     implementation("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_forge_version}")
+    runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_forge_version}")
 }

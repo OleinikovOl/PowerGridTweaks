@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockBehaviourMixin",
-    "LightFixtureBlockMixin"
+    "LightFixtureBlockMixin",
+    "powergrid.DoubleRelayComponentMixin",
+    "powergrid.RelayComponentMixin"
   ],
   "injectors": {
     "defaultRequire": 1

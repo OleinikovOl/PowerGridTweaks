@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "powergridtweaks:lithium_battery"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "powergridtweaks:blocks/lithium_battery"
+}

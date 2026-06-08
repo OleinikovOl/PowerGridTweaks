@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "powergridtweaks:carbon_mass"
+    }
+  ],
+  "results": [
+    {
+      "id": "powergridtweaks:graphite_sheet"
+    }
+  ]
+}

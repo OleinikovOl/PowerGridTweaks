@@ -14,17 +14,17 @@ import org.patryk3211.powergrid.kinetics.base.ElectricKineticBlockEntity;
 
 public class ShaftGeneratorBlockEntity extends ElectricKineticBlockEntity implements IRotor {
     public static final float NOMINAL_SPEED = 120.0f;
-    public static final float NOMINAL_VOLTAGE = 24.0f;
-    public static final float MAX_VOLTAGE = 36.0f;
-    public static final float INTERNAL_RESISTANCE = 0.8f;
-    public static final float RATED_OUTPUT_POWER = 180.0f;
+    public static final float NOMINAL_VOLTAGE = 240.0f;
+    public static final float MAX_VOLTAGE = 300.0f;
+    public static final float RATED_OUTPUT_POWER = 3000.0f;
+    public static final float INTERNAL_RESISTANCE = NOMINAL_VOLTAGE * NOMINAL_VOLTAGE / (4.0f * RATED_OUTPUT_POWER);
     public static final float MAX_OUTPUT_POWER = MAX_VOLTAGE * MAX_VOLTAGE / (4.0f * INTERNAL_RESISTANCE);
-    public static final float BASE_STRESS_IMPACT = 0.5f;
+    public static final float BASE_STRESS_IMPACT = 2.0f;
 
     private static final float DEFAULT_TORQUE_FOR_STRESS = 15.0f;
     private static final float POWER_TO_SPEED = 94.24778f;
-    private static final float MECHANICAL_LOAD_MULTIPLIER = 3.0f;
-    private static final float MAX_DYNAMIC_STRESS_IMPACT = 256.0f;
+    private static final float MECHANICAL_LOAD_MULTIPLIER = 1.0f;
+    private static final float MAX_DYNAMIC_STRESS_IMPACT = 1024.0f;
     private static final float VOLTS_PER_RPM = NOMINAL_VOLTAGE / NOMINAL_SPEED;
     private static final float MAX_SPEED = MAX_VOLTAGE / VOLTS_PER_RPM;
     private static final float FIELD_STRENGTH = NOMINAL_VOLTAGE / (NOMINAL_SPEED * ((float) Math.PI / 30.0f));

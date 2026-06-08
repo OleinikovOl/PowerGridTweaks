@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "powergridtweaks:nether_lithium_ore",
+  "step": "underground_ores"
+}
