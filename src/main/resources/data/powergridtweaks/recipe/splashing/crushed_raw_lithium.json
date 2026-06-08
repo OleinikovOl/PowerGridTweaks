@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "c:crushed_raw_materials/lithium"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "id": "powergridtweaks:lithium_nugget"
+    },
+    {
+      "chance": 0.25,
+      "id": "minecraft:glowstone_dust"
+    }
+  ]
+}

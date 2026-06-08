@@ -1,4 +1,13 @@
 {
   "item.powergridtweaks.high_voltage_light_bulb": "Высоковольтная лампа",
-  "block.powergridtweaks.shaft_generator": "Валовый генератор"
+  "block.powergridtweaks.shaft_generator": "Валовый генератор",
+  "block.powergridtweaks.lithium_battery": "Литиевый аккумулятор",
+  "block.powergridtweaks.nether_lithium_ore": "Незерская литиевая руда",
+  "item.powergridtweaks.raw_lithium": "Рудный литий",
+  "item.powergridtweaks.crushed_raw_lithium": "Дробленый рудный литий",
+  "item.powergridtweaks.lithium_ingot": "Литиевый слиток",
+  "item.powergridtweaks.lithium_nugget": "Кусочек лития",
+  "item.powergridtweaks.lithium_sheet": "Литиевая пластина",
+  "item.powergridtweaks.lithium_cell": "Литиевый элемент",
+  "item.powergridtweaks.incomplete_lithium_cell": "Незавершенный литиевый элемент"
 }

@@ -1,0 +1,75 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:plates/lithium"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "chance": 100.0,
+      "id": "powergridtweaks:lithium_cell"
+    },
+    {
+      "chance": 5.0,
+      "id": "powergridtweaks:lithium_sheet"
+    },
+    {
+      "chance": 3.0,
+      "id": "create:copper_sheet"
+    },
+    {
+      "chance": 2.0,
+      "id": "minecraft:redstone"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "powergridtweaks:incomplete_lithium_cell"
+        },
+        {
+          "tag": "c:plates/copper"
+        }
+      ],
+      "results": [
+        {
+          "id": "powergridtweaks:incomplete_lithium_cell"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "powergridtweaks:incomplete_lithium_cell"
+        },
+        {
+          "item": "minecraft:redstone"
+        }
+      ],
+      "results": [
+        {
+          "id": "powergridtweaks:incomplete_lithium_cell"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "powergridtweaks:incomplete_lithium_cell"
+        }
+      ],
+      "results": [
+        {
+          "id": "powergridtweaks:incomplete_lithium_cell"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "powergridtweaks:incomplete_lithium_cell"
+  }
+}

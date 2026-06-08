@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "powergridtweaks:shaft_generator"
+    "powergridtweaks:shaft_generator",
+    "powergridtweaks:lithium_battery",
+    "powergridtweaks:nether_lithium_ore"
   ]
 }

@@ -1,7 +1,10 @@
 package com.rerit.powergridtweaks;
 
 import com.rerit.powergridtweaks.ponder.PowerGridTweaksPonderPlugin;
+import com.rerit.powergridtweaks.registry.ModBlocks;
 import com.rerit.powergridtweaks.registry.ModItems;
+import com.simibubi.create.foundation.block.connected.CTModel;
+import com.simibubi.create.foundation.model.ModelSwapper;
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -10,19 +13,31 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import org.patryk3211.powergrid.electricity.battery.BatteryCTBehaviour;
 import org.patryk3211.powergrid.electricity.info.IHaveElectricProperties;
 
 public class PowerGridTweaksClient {
     public static void register(IEventBus modEventBus) {
         modEventBus.addListener(PowerGridTweaksClient::onClientSetup);
+        modEventBus.addListener(PowerGridTweaksClient::onModifyBakingResult);
 
         NeoForge.EVENT_BUS.addListener(PowerGridTweaksClient::onItemTooltip);
     }
 
     private static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> PonderIndex.addPlugin(new PowerGridTweaksPonderPlugin()));
+    }
+
+    private static void onModifyBakingResult(ModelEvent.ModifyBakingResult event) {
+        BatteryCTBehaviour behaviour = new BatteryCTBehaviour();
+        ModelSwapper.swapModels(
+                event.getModels(),
+                ModelSwapper.getAllBlockStateModelLocations(ModBlocks.LITHIUM_BATTERY.get()),
+                model -> new CTModel(model, behaviour)
+        );
     }
 
     private static void onItemTooltip(ItemTooltipEvent event) {

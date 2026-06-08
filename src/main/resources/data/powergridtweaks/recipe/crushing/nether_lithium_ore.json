@@ -1,0 +1,26 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "powergridtweaks:nether_lithium_ore"
+    }
+  ],
+  "processing_time": 350,
+  "results": [
+    {
+      "id": "powergridtweaks:crushed_raw_lithium"
+    },
+    {
+      "chance": 0.35,
+      "id": "powergridtweaks:crushed_raw_lithium"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "id": "minecraft:netherrack"
+    }
+  ]
+}

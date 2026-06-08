@@ -5,6 +5,7 @@ import com.rerit.powergridtweaks.registry.ModBlockEntities;
 import com.rerit.powergridtweaks.registry.ModBlocks;
 import com.rerit.powergridtweaks.registry.ModCreativeTabs;
 import com.rerit.powergridtweaks.registry.ModItems;
+import com.rerit.powergridtweaks.registry.ModThermalValues;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -20,6 +21,7 @@ public class PowerGridTweaks {
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        ModThermalValues.register();
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             PowerGridTweaksClient.register(modEventBus);

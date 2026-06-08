@@ -1,4 +1,13 @@
 {
   "item.powergridtweaks.high_voltage_light_bulb": "High Voltage Light Bulb",
-  "block.powergridtweaks.shaft_generator": "Shaft Generator"
+  "block.powergridtweaks.shaft_generator": "Shaft Generator",
+  "block.powergridtweaks.lithium_battery": "Lithium Battery",
+  "block.powergridtweaks.nether_lithium_ore": "Nether Lithium Ore",
+  "item.powergridtweaks.raw_lithium": "Raw Lithium",
+  "item.powergridtweaks.crushed_raw_lithium": "Crushed Raw Lithium",
+  "item.powergridtweaks.lithium_ingot": "Lithium Ingot",
+  "item.powergridtweaks.lithium_nugget": "Lithium Nugget",
+  "item.powergridtweaks.lithium_sheet": "Lithium Sheet",
+  "item.powergridtweaks.lithium_cell": "Lithium Cell",
+  "item.powergridtweaks.incomplete_lithium_cell": "Incomplete Lithium Cell"
 }

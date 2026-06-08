@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "powergridtweaks:block/lithium_battery"
+    }
+  }
+}

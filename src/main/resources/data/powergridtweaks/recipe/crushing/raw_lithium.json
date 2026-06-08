@@ -1,0 +1,14 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "c:raw_materials/lithium"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "id": "powergridtweaks:crushed_raw_lithium"
+    }
+  ]
+}
