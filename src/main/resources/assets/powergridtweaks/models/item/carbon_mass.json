@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "powergridtweaks:item/graphite_sheet"
+    "layer0": "powergridtweaks:item/incomplete_graphite"
   }
 }

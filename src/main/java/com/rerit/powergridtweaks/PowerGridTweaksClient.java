@@ -16,7 +16,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import org.patryk3211.powergrid.electricity.battery.BatteryCTBehaviour;
 import org.patryk3211.powergrid.electricity.info.IHaveElectricProperties;
 
 public class PowerGridTweaksClient {
@@ -32,7 +31,7 @@ public class PowerGridTweaksClient {
     }
 
     private static void onModifyBakingResult(ModelEvent.ModifyBakingResult event) {
-        BatteryCTBehaviour behaviour = new BatteryCTBehaviour();
+        LithiumBatteryCTBehaviour behaviour = new LithiumBatteryCTBehaviour();
         ModelSwapper.swapModels(
                 event.getModels(),
                 ModelSwapper.getAllBlockStateModelLocations(ModBlocks.LITHIUM_BATTERY.get()),

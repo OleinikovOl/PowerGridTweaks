@@ -21,6 +21,7 @@ public class PowerGridTweaks {
     public PowerGridTweaks(IEventBus modEventBus, ModContainer modContainer) {
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        ModCreativeTabs.CREATIVE_TABS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         ModThermalValues.register();
 
@@ -29,7 +30,6 @@ public class PowerGridTweaks {
         }
 
         modEventBus.addListener(ModCircuitComponents::registerComponents);
-        modEventBus.addListener(ModCreativeTabs::addCreativeTabItems);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, PowerGridTweaksConfig.SPEC);
     }

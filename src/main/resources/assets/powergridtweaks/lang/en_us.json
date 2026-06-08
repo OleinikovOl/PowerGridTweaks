@@ -1,4 +1,5 @@
 {
+  "itemGroup.powergridtweaks": "PowerGrid Tweaks",
   "item.powergridtweaks.high_voltage_light_bulb": "High Voltage Light Bulb",
   "item.powergridtweaks.power_diode": "Power Diode",
   "item.powergridtweaks.power_resistor": "Power Resistor",
@@ -16,7 +17,7 @@
   "item.powergridtweaks.graphite_sheet": "Graphite Sheet",
   "item.powergridtweaks.lithium_cell": "Lithium Cell",
   "item.powergridtweaks.incomplete_lithium_cell": "Incomplete Lithium Cell",
-  "item.powergridtweaks.incomplete_graphite_sheet": "Incomplete Graphite Sheet",
+  "item.powergridtweaks.carbon_mass": "Carbon Mass",
   "powergridtweaks.component.property.power_redstone_relay_powered": "Powered",
   "powergridtweaks.component.property.power_relay_current": "Threshold Current",
   "powergridtweaks.component.property.power_relay_current.summary": "Current needed to trigger the power relay",

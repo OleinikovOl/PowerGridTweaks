@@ -2,7 +2,7 @@
   "type": "create:pressing",
   "ingredients": [
     {
-      "item": "powergridtweaks:incomplete_graphite_sheet"
+      "item": "powergridtweaks:carbon_mass"
     }
   ],
   "results": [

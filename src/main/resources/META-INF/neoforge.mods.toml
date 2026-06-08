@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="powergridtweaks"
-version="0.0.8"
+version="0.0.9"
 displayName="Power Grid Tweaks"
 authors="Rerit"
 description='''Small tweaks and additions for Create: Power Grid.'''

@@ -63,6 +63,6 @@ public class ModItems {
     public static final DeferredItem<Item> INCOMPLETE_LITHIUM_CELL =
             ITEMS.registerSimpleItem("incomplete_lithium_cell", new Item.Properties());
 
-    public static final DeferredItem<Item> INCOMPLETE_GRAPHITE_SHEET =
-            ITEMS.registerSimpleItem("incomplete_graphite_sheet", new Item.Properties());
+    public static final DeferredItem<Item> CARBON_MASS =
+            ITEMS.registerSimpleItem("carbon_mass", new Item.Properties());
 }
