@@ -1,25 +1,58 @@
+# Power Grid Tweaks
 
-Installation information
-=======
+NeoForge 1.21.1 addon for Create: Power Grid.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Requirements
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+- Git.
+- Internet access for the first Gradle run.
+- Java 21 is optional locally: Gradle is configured to use a Java 21 toolchain and can download one automatically through Foojay if none is installed.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Quick Start
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Clone the repository and run the game from the project root:
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+```bash
+./gradlew runClient
+```
+
+On Windows:
+
+```bat
+gradlew.bat runClient
+```
+
+Build the mod jar:
+
+```bash
+./gradlew build
+```
+
+The output jar is written to `build/libs/`.
+
+## IDE Setup
+
+Open the repository as a Gradle project in IntelliJ IDEA or Eclipse.
+
+If the IDE does not pick up dependencies after import, run:
+
+```bash
+./gradlew --refresh-dependencies
+```
+
+Then reload the Gradle project in the IDE.
+
+## Useful Tasks
+
+```bash
+./gradlew runClient
+./gradlew runServer
+./gradlew build
+./gradlew clean
+```
+
+## Notes
+
+- Do not commit local runtime data from `run/`, Gradle caches, IDE folders, or `.ai/`; they are ignored.
+- Dependency versions are pinned in `gradle.properties`.
+- The Gradle wrapper is included, so a system Gradle installation is not required.
