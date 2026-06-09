@@ -49,6 +49,14 @@ dependencies {
     implementation "curse.maven:architectury-api-419699:5786327"
     implementation "curse.maven:power-grid-1321420:7999916"
     implementation("net.createmod.ponder:ponder-neoforge:${ponder_forge_version}+mc${minecraft_version}")
+    implementation("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_forge_version}")
     implementation("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_forge_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_forge_version}")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+}
+
+test {
+    useJUnitPlatform()
 }

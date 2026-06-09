@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "item": "minecraft:iron_helmet"
+    },
+    "L": {
+      "item": "powergrid:light_bulb"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " R ",
+    "CLC",
+    " H "
+  ],
+  "result": {
+    "id": "powergridtweaks:miner_helmet",
+    "count": 1
+  },
+  "show_notification": true
+}

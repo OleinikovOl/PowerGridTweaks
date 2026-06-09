@@ -36,7 +36,9 @@ public class ModCreativeTabs {
                                 output.accept(ModItems.LITHIUM_SHEET.get());
                                 output.accept(ModItems.GRAPHITE_SHEET.get());
                                 output.accept(ModItems.LITHIUM_CELL.get());
+                                output.accept(ModItems.INCOMPLETE_LITHIUM_CELL.get());
                                 output.accept(ModItems.CARBON_MASS.get());
+                                output.accept(ModItems.MINER_HELMET.get());
                             })
                             .build()
             );

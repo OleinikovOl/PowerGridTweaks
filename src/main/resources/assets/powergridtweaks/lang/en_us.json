@@ -6,6 +6,8 @@
   "item.powergridtweaks.power_switch": "Power Switch",
   "item.powergridtweaks.power_redstone_relay": "Power Redstone Relay",
   "item.powergridtweaks.power_relay": "Power Relay",
+  "item.powergridtweaks.miner_helmet": "Miner Helmet",
+  "item.powergridtweaks.tooltip.energy": "%s / %s FE",
   "block.powergridtweaks.shaft_generator": "Shaft Generator",
   "block.powergridtweaks.lithium_battery": "Lithium Battery",
   "block.powergridtweaks.nether_lithium_ore": "Nether Lithium Ore",

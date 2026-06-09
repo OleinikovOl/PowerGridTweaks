@@ -5,6 +5,8 @@ import com.rerit.powergridtweaks.registry.ModBlockEntities;
 import com.rerit.powergridtweaks.registry.ModBlocks;
 import com.rerit.powergridtweaks.registry.ModCircuitComponents;
 import com.rerit.powergridtweaks.registry.ModCreativeTabs;
+import com.rerit.powergridtweaks.registry.ModDataComponents;
+import com.rerit.powergridtweaks.registry.ModItemCapabilities;
 import com.rerit.powergridtweaks.registry.ModItems;
 import com.rerit.powergridtweaks.registry.ModThermalValues;
 import net.neoforged.api.distmarker.Dist;
@@ -24,12 +26,14 @@ public class PowerGridTweaks {
         ModCreativeTabs.CREATIVE_TABS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         ModThermalValues.register();
+        ModDataComponents.DATA_COMPONENT_TYPES.register(modEventBus);
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             PowerGridTweaksClient.register(modEventBus);
         }
 
         modEventBus.addListener(ModCircuitComponents::registerComponents);
+        modEventBus.addListener(ModItemCapabilities::register);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, PowerGridTweaksConfig.SPEC);
     }

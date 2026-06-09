@@ -2,6 +2,8 @@ package com.rerit.powergridtweaks.registry;
 
 import com.rerit.powergridtweaks.PowerGridTweaks;
 import com.rerit.powergridtweaks.item.HighVoltageLightBulbItem;
+import com.rerit.powergridtweaks.item.MinerHelmetItem;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -65,4 +67,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> CARBON_MASS =
             ITEMS.registerSimpleItem("carbon_mass", new Item.Properties());
+
+    public static final DeferredItem<MinerHelmetItem> MINER_HELMET =
+            ITEMS.register("miner_helmet",
+                    () -> new MinerHelmetItem(ArmorMaterials.IRON, new Item.Properties().stacksTo(1)));
 }
