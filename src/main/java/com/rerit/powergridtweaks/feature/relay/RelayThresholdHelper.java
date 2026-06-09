@@ -37,11 +37,12 @@ public final class RelayThresholdHelper {
         float upperVoltage = component.get(RelayComponent.THRESHOLD_VOLTAGE);
         float lowerVoltage = Math.min(component.get(LOWER_THRESHOLD_VOLTAGE), upperVoltage);
 
-        if (upperVoltage <= 0.0f) {
-            return originalHoldingCurrent;
-        }
-
         float triggerCurrent = component.get(RelayComponent.THRESHOLD_CURRENT);
-        return triggerCurrent * lowerVoltage / upperVoltage;
+        return RelayThresholdLogic.scaledHoldingCurrent(
+                originalHoldingCurrent,
+                triggerCurrent,
+                lowerVoltage,
+                upperVoltage
+        );
     }
 }
