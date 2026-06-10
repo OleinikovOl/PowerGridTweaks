@@ -6,6 +6,10 @@ plugins {
 group = 'com.rerit'
 version = '0.0.9'
 
+def textureModId = 'powergridtweaks'
+def artTextureDir = layout.projectDirectory.dir('art/generated/textures')
+def resourceTextureDir = layout.projectDirectory.dir("src/main/resources/assets/${textureModId}/textures")
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
@@ -59,4 +63,107 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.register('syncTextures', Copy) {
+    group = 'assets'
+    description = 'Copies exported art PNG files into the Minecraft texture resources.'
+
+    from(artTextureDir) {
+        include '**/*.png'
+    }
+    into(resourceTextureDir)
+    includeEmptyDirs = false
+}
+
+tasks.register('validateTextures') {
+    group = 'verification'
+    description = 'Validates texture file names and basic PNG metadata.'
+
+    def artTexturePath = artTextureDir.asFile.absolutePath
+    def resourceTexturePath = resourceTextureDir.asFile.absolutePath
+
+    doLast {
+        def errors = []
+        def warnings = []
+        def roots = [new File(artTexturePath), new File(resourceTexturePath)]
+        def allowedPath = ~/^[a-z0-9_\/.\-]+$/
+        def cyrillic = ~/.*[А-Яа-яЁё].*/
+        def regularTextureSizes = [
+                [16, 16],
+                [32, 32],
+                [64, 64],
+                [128, 128],
+                [256, 256]
+        ]
+
+        roots.each { root ->
+            if (!root.exists()) {
+                return
+            }
+
+            root.eachFileRecurse { texture ->
+                if (!texture.isFile()) {
+                    return
+                }
+
+                def relativePath = root.toPath().relativize(texture.toPath()).toString().replace('\\', '/')
+
+                if (texture.name == '.gitkeep') {
+                    return
+                }
+
+                if (!relativePath.endsWith('.png')) {
+                    errors << "${relativePath}: only .png files are allowed in texture folders"
+                    return
+                }
+                if (relativePath != relativePath.toLowerCase(Locale.ROOT)) {
+                    errors << "${relativePath}: texture paths must be lowercase"
+                }
+                if (relativePath.contains(' ')) {
+                    errors << "${relativePath}: texture paths must not contain spaces"
+                }
+                if (relativePath ==~ cyrillic) {
+                    errors << "${relativePath}: texture paths must not contain Cyrillic characters"
+                }
+                if (!(relativePath ==~ allowedPath)) {
+                    errors << "${relativePath}: allowed characters are a-z, 0-9, underscore, hyphen, slash, and dot"
+                }
+
+                byte[] header = new byte[24]
+                texture.withInputStream { input ->
+                    int read = input.read(header)
+                    if (read < header.length) {
+                        errors << "${relativePath}: file is too small to be a valid PNG"
+                        return
+                    }
+                }
+
+                byte[] signature = [(byte) 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A] as byte[]
+                if (!header[0..7].equals(signature as List<Byte>) || new String(header, 12, 4, 'US-ASCII') != 'IHDR') {
+                    errors << "${relativePath}: invalid PNG header"
+                    return
+                }
+
+                int width = java.nio.ByteBuffer.wrap(header, 16, 4).getInt()
+                int height = java.nio.ByteBuffer.wrap(header, 20, 4).getInt()
+                if (!regularTextureSizes.any { it[0] == width && it[1] == height }) {
+                    warnings << "${relativePath}: PNG size is ${width}x${height}; this is allowed, but regular item/block textures are usually 16x16, 32x32, 64x64, 128x128, or 256x256"
+                }
+            }
+        }
+
+        warnings.each { logger.warn(it) }
+        if (!errors.isEmpty()) {
+            throw new GradleException("Texture validation failed:\n" + errors.join('\n'))
+        }
+    }
+}
+
+tasks.named('processResources') {
+    dependsOn tasks.named('syncTextures')
+}
+
+tasks.named('check') {
+    dependsOn tasks.named('validateTextures')
 }
