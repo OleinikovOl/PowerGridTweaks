@@ -42,7 +42,7 @@ public class PowerGridTweaksConfig {
 
         MINER_HELMET_CAPACITY = BUILDER
                 .comment("Internal FE buffer capacity for the miner helmet.")
-                .defineInRange("capacity", 1200, 1, Integer.MAX_VALUE);
+                .defineInRange("capacity", 10000, 1, Integer.MAX_VALUE);
 
         MINER_HELMET_MAX_RECEIVE = BUILDER
                 .comment("Maximum FE the miner helmet can receive per transfer.")
