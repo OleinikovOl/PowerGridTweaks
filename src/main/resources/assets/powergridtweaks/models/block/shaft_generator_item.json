@@ -4,8 +4,7 @@
 	"parent": "block/block",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "powergridtweaks:block/shaft_generator",
-		"particle": "powergridtweaks:block/shaft_generator"
+		"1": "powergridtweaks:block/shaft_generator"
 	},
 	"elements": [
 		{
@@ -32,6 +31,20 @@
 				"west": {"uv": [7.5, 8, 8.75, 10.75], "texture": "#1"},
 				"up": {"uv": [2.75, 9.5, 0, 8.25], "texture": "#1"},
 				"down": {"uv": [11.5, 8, 8.75, 9.25], "texture": "#1"}
+			}
+		},
+		{
+			"name": "shaft",
+			"from": [6, 6, -1.5],
+			"to": [10, 10, 0.5],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 8, -0.5]},
+			"faces": {
+				"north": {"uv": [9.75, 0, 10.75, 1], "texture": "#1"},
+				"east": {"uv": [7, 2.75, 7.5, 3.75], "texture": "#1"},
+				"south": {"uv": [9.75, 1, 10.75, 2], "texture": "#1"},
+				"west": {"uv": [7, 3.75, 7.5, 4.75], "texture": "#1"},
+				"up": {"uv": [10, 8, 9, 7.5], "texture": "#1"},
+				"down": {"uv": [10.75, 2, 9.75, 2.5], "texture": "#1"}
 			}
 		},
 		{
@@ -92,9 +105,9 @@
 			"name": "group",
 			"origin": [0, 3, 0],
 			"color": 0,
-			"children": [0, 1, 2, 3]
+			"children": [0, 1, 2, 3, 4]
 		},
-		4,
-		5
+		5,
+		6
 	]
 }
