@@ -11,10 +11,11 @@
 
 Референсы хранятся в `art/sources/references/`. Исходники Aseprite можно хранить в `art/sources/aseprite/`.
 
-Готовые PNG нужно экспортировать в:
+Готовые PNG нужно экспортировать рядом с мастер-файлом в папку Photoshop Generator `*-assets`.
+Gradle ищет PNG в таких папках внутри `art/sources/` и копирует путь после `*-assets`:
 
 ```text
-art/generated/textures/<category>/<texture_name>.png
+art/sources/psd/<master>-assets/<category>/<texture_name>.png
 ```
 
 Gradle копирует экспортированные PNG в Minecraft resources:
@@ -26,11 +27,11 @@ src/main/resources/assets/powergridtweaks/textures/
 ## Примеры
 
 ```text
-art/generated/textures/item/lithium_cell.png
-art/generated/textures/item/incomplete_lithium_cell.png
-art/generated/textures/block/battery_controller_front.png
-art/generated/textures/block/battery_controller_side.png
-art/generated/textures/gui/battery_controller.png
+art/sources/psd/items-assets/item/lithium_cell.png
+art/sources/psd/items-assets/item/incomplete_lithium_cell.png
+art/sources/psd/blocks-assets/block/battery_controller_front.png
+art/sources/psd/blocks-assets/block/battery_controller_side.png
+art/sources/psd/gui-assets/gui/battery_controller.png
 ```
 
 ## Правила именования
@@ -54,7 +55,8 @@ item/lithium_cell.png
 block/battery_controller_front.png
 ```
 
-Экспортируйте эти файлы внутрь `art/generated/textures/`.
+Экспортируйте эти файлы в папку `*-assets` рядом с PSD, например
+`art/sources/psd/items-assets/item/lithium_cell.png`.
 
 ## Команды
 
@@ -78,7 +80,7 @@ gradlew.bat processResources
 
 1. Открыть мастер-файл PSD из `art/sources/psd/`.
 2. Обновить нужную группу или слой.
-3. Экспортировать PNG в `art/generated/textures/`.
+3. Экспортировать PNG в папку `*-assets` рядом с PSD.
 4. Запустить `./gradlew syncTextures` или попросить разработчика запустить сборку.
 
-`art/generated/textures/**/*.png` — это staging-зона, она игнорируется git. Коммитить нужно синхронизированные PNG из `src/main/resources/assets/powergridtweaks/textures/`.
+Коммитить нужно исходные PNG из `art/sources/**/*-assets/**/*.png` и синхронизированные PNG из `src/main/resources/assets/powergridtweaks/textures/`.

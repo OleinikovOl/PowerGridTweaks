@@ -7,7 +7,7 @@ group = 'com.rerit'
 version = '0.0.9'
 
 def textureModId = 'powergridtweaks'
-def artTextureDir = layout.projectDirectory.dir('art/generated/textures')
+def artTextureSourceDir = layout.projectDirectory.dir('art/sources')
 def resourceTextureDir = layout.projectDirectory.dir("src/main/resources/assets/${textureModId}/textures")
 
 java {
@@ -67,26 +67,41 @@ test {
 
 tasks.register('syncTextures', Copy) {
     group = 'assets'
-    description = 'Copies exported art PNG files into the Minecraft texture resources.'
+    description = 'Copies exported source art PNG files into the Minecraft texture resources.'
 
-    from(artTextureDir) {
-        include '**/*.png'
+    from(artTextureSourceDir) {
+        include '**/*-assets/**/*.png'
+        eachFile { details ->
+            def segments = details.relativePath.segments
+            def assetDirIndex = segments.findIndexOf { it.endsWith('-assets') }
+            details.relativePath = new RelativePath(true, segments[(assetDirIndex + 1)..<segments.length] as String[])
+        }
     }
     into(resourceTextureDir)
     includeEmptyDirs = false
+    duplicatesStrategy = DuplicatesStrategy.FAIL
 }
 
 tasks.register('validateTextures') {
     group = 'verification'
     description = 'Validates texture file names and basic PNG metadata.'
 
-    def artTexturePath = artTextureDir.asFile.absolutePath
+    def artTextureSourcePath = artTextureSourceDir.asFile.absolutePath
     def resourceTexturePath = resourceTextureDir.asFile.absolutePath
 
     doLast {
-        def errors = []
-        def warnings = []
-        def roots = [new File(artTexturePath), new File(resourceTexturePath)]
+        def errors = new LinkedHashSet<String>()
+        def warnings = new LinkedHashSet<String>()
+        def sourceTextureRoots = []
+        def sourceRoot = new File(artTextureSourcePath)
+        if (sourceRoot.exists()) {
+            sourceRoot.eachFileRecurse { file ->
+                if (file.isDirectory() && file.name.endsWith('-assets')) {
+                    sourceTextureRoots << file
+                }
+            }
+        }
+        def roots = sourceTextureRoots + [new File(resourceTexturePath)]
         def allowedPath = ~/^[a-z0-9_\/.\-]+$/
         def cyrillic = ~/.*[А-Яа-яЁё].*/
         def regularTextureSizes = [

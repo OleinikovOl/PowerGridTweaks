@@ -37,7 +37,6 @@ AGENTS.md
 *.tmp
 *.bak
 Thumbs.db
-art/generated/textures/**/*.png
 
 ### Mac OS ###
 .DS_Store
