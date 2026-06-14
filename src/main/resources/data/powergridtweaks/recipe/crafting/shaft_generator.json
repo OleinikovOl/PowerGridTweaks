@@ -2,23 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "P": {
+      "tag": "c:plates/copper"
+    },
+    "H": {
+      "item": "powergrid:conductive_casing"
+    },
+    "C": {
+      "tag": "c:copper_coils"
+    },
     "S": {
       "item": "create:shaft"
     },
-    "G": {
+    "E": {
       "item": "powergrid:electrical_gizmo"
-    },
-    "C": {
-      "item": "minecraft:copper_ingot"
-    },
-    "R": {
-      "item": "minecraft:redstone"
     }
   },
   "pattern": [
-    " C ",
-    "SGS",
-    " R "
+    "PHP",
+    "CSC",
+    "CEC"
   ],
   "result": {
     "id": "powergridtweaks:shaft_generator",

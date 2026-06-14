@@ -34,17 +34,27 @@ public class ShaftGeneratorBlock extends ElectricKineticBlock
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
     private static final VoxelShape NORTH_SHAPE = Shapes.or(
-            Block.box(3.0, 3.0, 0.5, 13.0, 13.0, 15.5),
-            Block.box(2.5, 2.5, 10.5, 13.5, 13.5, 15.5));
+            Block.box(2.0, 0.0, 2.0, 14.0, 3.0, 14.0),
+            Block.box(3.0, 3.0, 3.0, 13.0, 13.0, 13.0),
+            Block.box(4.0, 4.0, 1.0, 12.0, 12.0, 3.0),
+            Block.box(4.0, 4.0, 13.0, 12.0, 12.0, 15.0),
+            Block.box(2.0, 12.0, 6.0, 4.0, 14.0, 10.0),
+            Block.box(12.0, 12.0, 6.0, 14.0, 14.0, 10.0),
+            Block.box(6.0, 6.0, 0.0, 10.0, 10.0, 16.0));
     private static final VoxelShape UP_SHAPE = Shapes.or(
-            Block.box(3.0, 0.5, 3.0, 13.0, 15.5, 13.0),
-            Block.box(2.5, 0.5, 2.5, 13.5, 5.5, 13.5));
+            Block.box(2.0, 2.0, 0.0, 14.0, 14.0, 3.0),
+            Block.box(3.0, 3.0, 3.0, 13.0, 13.0, 13.0),
+            Block.box(4.0, 13.0, 4.0, 12.0, 15.0, 12.0),
+            Block.box(4.0, 1.0, 4.0, 12.0, 3.0, 12.0),
+            Block.box(2.0, 6.0, 12.0, 4.0, 10.0, 14.0),
+            Block.box(12.0, 6.0, 12.0, 14.0, 10.0, 14.0),
+            Block.box(6.0, 0.0, 6.0, 10.0, 16.0, 10.0));
 
     private static final TerminalBoundingBox POSITIVE_NORTH_TERMINAL =
-            new TerminalBoundingBox(Component.literal("+"), 5.0, 13.0, 14.0, 7.0, 14.0, 16.0)
+            new TerminalBoundingBox(Component.literal("+"), 12.0, 12.0, 6.0, 14.0, 14.0, 10.0)
                     .withColor(0xD65A31);
     private static final TerminalBoundingBox NEGATIVE_NORTH_TERMINAL =
-            new TerminalBoundingBox(Component.literal("-"), 9.0, 13.0, 14.0, 11.0, 14.0, 16.0)
+            new TerminalBoundingBox(Component.literal("-"), 2.0, 12.0, 6.0, 4.0, 14.0, 10.0)
                     .withColor(0x3E78B2);
     private static final TerminalBoundingBox[] NORTH_TERMINALS = {
             POSITIVE_NORTH_TERMINAL,

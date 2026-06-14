@@ -23,12 +23,7 @@
 - `item/lithium_ingot.png`
 - `item/lithium_nugget.png`
 - `item/lithium_sheet.png`
-- `item/miner_helmet.png`
 - `item/raw_lithium.png`
-
-### Слой брони
-
-- `models/armor/miner_helmet_layer_1.png`
 
 ## Рекомендации по ручной миграции
 

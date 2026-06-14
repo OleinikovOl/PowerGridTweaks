@@ -13,14 +13,13 @@ import org.patryk3211.powergrid.electricity.sim.special.IRotor;
 import org.patryk3211.powergrid.kinetics.base.ElectricKineticBlockEntity;
 
 public class ShaftGeneratorBlockEntity extends ElectricKineticBlockEntity implements IRotor {
-    public static final float NOMINAL_SPEED = 120.0f;
     public static final float NOMINAL_VOLTAGE = 240.0f;
-    public static final float MAX_VOLTAGE = 300.0f;
     public static final float RATED_OUTPUT_POWER = 3000.0f;
-    public static final float INTERNAL_RESISTANCE = NOMINAL_VOLTAGE * NOMINAL_VOLTAGE / (4.0f * RATED_OUTPUT_POWER);
-    public static final float MAX_OUTPUT_POWER = MAX_VOLTAGE * MAX_VOLTAGE / (4.0f * INTERNAL_RESISTANCE);
-    public static final float BASE_STRESS_IMPACT = 2.0f;
 
+    private static final float NOMINAL_SPEED = 120.0f;
+    private static final float MAX_VOLTAGE = 300.0f;
+    private static final float INTERNAL_RESISTANCE = NOMINAL_VOLTAGE * NOMINAL_VOLTAGE / (4.0f * RATED_OUTPUT_POWER);
+    private static final float BASE_STRESS_IMPACT = 2.0f;
     private static final float DEFAULT_TORQUE_FOR_STRESS = 15.0f;
     private static final float POWER_TO_SPEED = 94.24778f;
     private static final float MECHANICAL_LOAD_MULTIPLIER = 1.0f;
@@ -74,10 +73,6 @@ public class ShaftGeneratorBlockEntity extends ElectricKineticBlockEntity implem
             sendData();
             lastSyncedStressImpact = stressImpact;
         }
-    }
-
-    public float generatedVoltage() {
-        return Mth.clamp(getSpeed() * VOLTS_PER_RPM, -MAX_VOLTAGE, MAX_VOLTAGE);
     }
 
     @Override

@@ -1,15 +1,22 @@
 package com.rerit.powergridtweaks.registry;
 
 import com.rerit.powergridtweaks.PowerGridTweaks;
+import com.rerit.powergridtweaks.registry.item.ModBlockItems;
+import com.rerit.powergridtweaks.registry.item.ModCircuitItems;
+import com.rerit.powergridtweaks.registry.item.ModMaterialItems;
+import com.rerit.powergridtweaks.registry.item.ModSpecialItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Supplier;
 
-public class ModCreativeTabs {
+public final class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PowerGridTweaks.MOD_ID);
 
@@ -20,26 +27,18 @@ public class ModCreativeTabs {
                             .title(Component.translatable("itemGroup.powergridtweaks"))
                             .icon(() -> new ItemStack(ModItems.LITHIUM_CELL.get()))
                             .displayItems((parameters, output) -> {
-                                output.accept(ModItems.HIGH_VOLTAGE_LIGHT_BULB.get());
-                                output.accept(ModItems.POWER_DIODE.get());
-                                output.accept(ModItems.POWER_RESISTOR.get());
-                                output.accept(ModItems.POWER_SWITCH.get());
-                                output.accept(ModItems.POWER_REDSTONE_RELAY.get());
-                                output.accept(ModItems.POWER_RELAY.get());
-                                output.accept(ModItems.SHAFT_GENERATOR.get());
-                                output.accept(ModItems.LITHIUM_BATTERY.get());
-                                output.accept(ModItems.NETHER_LITHIUM_ORE.get());
-                                output.accept(ModItems.RAW_LITHIUM.get());
-                                output.accept(ModItems.CRUSHED_RAW_LITHIUM.get());
-                                output.accept(ModItems.LITHIUM_INGOT.get());
-                                output.accept(ModItems.LITHIUM_NUGGET.get());
-                                output.accept(ModItems.LITHIUM_SHEET.get());
-                                output.accept(ModItems.GRAPHITE_SHEET.get());
-                                output.accept(ModItems.LITHIUM_CELL.get());
-                                output.accept(ModItems.INCOMPLETE_LITHIUM_CELL.get());
-                                output.accept(ModItems.CARBON_MASS.get());
-                                output.accept(ModItems.MINER_HELMET.get());
+                                acceptAll(output, ModSpecialItems.CREATIVE_TAB_ITEMS);
+                                acceptAll(output, ModCircuitItems.CREATIVE_TAB_ITEMS);
+                                acceptAll(output, ModBlockItems.CREATIVE_TAB_ITEMS);
+                                acceptAll(output, ModMaterialItems.CREATIVE_TAB_ITEMS);
                             })
                             .build()
             );
+
+    private ModCreativeTabs() {
+    }
+
+    private static void acceptAll(CreativeModeTab.Output output, List<DeferredItem<? extends Item>> items) {
+        items.forEach(item -> output.accept(item.get()));
+    }
 }

@@ -6,8 +6,6 @@
   "item.powergridtweaks.power_switch": "Силовой выключатель",
   "item.powergridtweaks.power_redstone_relay": "Силовое редстоун-реле",
   "item.powergridtweaks.power_relay": "Силовое реле",
-  "item.powergridtweaks.miner_helmet": "Шахтерский шлем",
-  "item.powergridtweaks.tooltip.energy": "%s / %s FE",
   "block.powergridtweaks.shaft_generator": "Валовый генератор",
   "block.powergridtweaks.lithium_battery": "Литиевый аккумулятор",
   "block.powergridtweaks.nether_lithium_ore": "Незерская литиевая руда",
